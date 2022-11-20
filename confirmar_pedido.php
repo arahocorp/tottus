@@ -1,17 +1,13 @@
-<?php  
+<?php
 include('global/config_pdo.php');
-include ('carrito.php');
+include('carrito.php');
 include('templates/header.php');
-$_mensaje="";
+$_mensaje = "";
 ?>
-
-
-
-
-
-<div class="alert alert-success">¡SU PEDIDO FUE REALIZADO CON EXITO!</div>
-   
-    
-
-
-<?php include ('templates/footer.php');?>
+<div class="vh-100 row align-items-center justify-content-center col-auto">
+    <div class="text-center">
+        <div class="alert alert-success w-auto">¡SU PEDIDO FUE REALIZADO CON EXITO!</div>
+        <a href="index.php" class="btn btn-confirmar">Seguir comprando</a>
+    </div>
+</div>
+<?php include('templates/footer.php'); ?>

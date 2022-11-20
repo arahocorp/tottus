@@ -1,0 +1,186 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+footer {
+  color: white;
+}
+
+.col-3 {
+  margin-bottom: 30px;
+}
+.contenedor {
+  min-height: 80vh;
+}
+#bg-h {
+  background: rgba(0, 0, 0);
+}
+#i-carrito {
+  color: rgb(1, 103, 247);
+  margin-right: 10px;
+  font-size: 30px;
+}
+#i-carrito :hover {
+  color: rgb(94, 255, 1);
+}
+#card-img {
+  border-radius: 20px;
+}
+
+#card-img:hover {
+  box-shadow: rgba(20, 75, 138, 0.77) 0px 7px 29px 0px;
+  border-radius: 20px;
+}
+
+.btn-a-anadir {
+  background-image: linear-gradient(
+    270deg,
+    #863a46 0,
+    #863b3f 3.85%,
+    #843d37 7.69%,
+    #823f31 11.54%,
+    #7f422a 15.38%,
+    #7a4525 19.23%,
+    #764820 23.08%,
+    #704b1c 26.92%,
+    #6a4d18 30.77%,
+    #645017 34.62%,
+    #5d5317 38.46%,
+    #555518 42.31%,
+    #4d571b 46.15%,
+    #45591f 50%,
+    #3c5b24 53.85%,
+    #325c2a 57.69%,
+    #275d31 61.54%,
+    #185e38 65.38%,
+    #005f3f 69.23%,
+    #006047 73.08%,
+    #00604f 76.92%,
+    #006057 80.77%,
+    #00605f 84.62%,
+    #006067 88.46%,
+    #00606e 92.31%,
+    #005f75 96.15%,
+    #005e7b 100%
+  );
+  width: 100%;
+  color: white;
+}
+
+.btn-a-anadir:hover {
+  color: #000000;
+  background-image: linear-gradient(
+    75deg,
+    #fae8d3 0,
+    #f6e9d3 3.33%,
+    #f3ebd3 6.67%,
+    #efecd3 10%,
+    #ecedd4 13.33%,
+    #e8eed6 16.67%,
+    #e4efd7 20%,
+    #e0efd9 23.33%,
+    #ddf0dc 26.67%,
+    #daf1df 30%,
+    #d6f1e2 33.33%,
+    #d4f2e5 36.67%,
+    #d1f2e8 40%,
+    #cff2eb 43.33%,
+    #cef2ef 46.67%,
+    #cdf2f2 50%,
+    #cdf2f5 53.33%,
+    #cdf1f8 56.67%,
+    #cef1fb 60%,
+    #d0f0fd 63.33%,
+    #d2efff 66.67%,
+    #d4efff 70%,
+    #d7eeff 73.33%,
+    #dbedff 76.67%,
+    #dfecff 80%,
+    #e3ebff 83.33%,
+    #e7eaff 86.67%,
+    #ebe8ff 90%,
+    #efe7ff 93.33%,
+    #f3e6fd 96.67%,
+    #f6e5fb 100%
+  );
+  border-color: #000000;
+}
+
+.btn-confirmar {
+  background-image: linear-gradient(
+    225deg,
+    #003c3f 0,
+    #003c47 3.33%,
+    #003c4f 6.67%,
+    #003c55 10%,
+    #003b5b 13.33%,
+    #003a61 16.67%,
+    #003965 20%,
+    #003868 23.33%,
+    #00366a 26.67%,
+    #00346b 30%,
+    #00326b 33.33%,
+    #002f6a 36.67%,
+    #182b67 40%,
+    #2c2863 43.33%,
+    #39245f 46.67%,
+    #441f59 50%,
+    #4d1a53 53.33%,
+    #54154c 56.67%,
+    #591044 60%,
+    #5d0b3d 63.33%,
+    #600835 66.67%,
+    #62072d 70%,
+    #620825 73.33%,
+    #620b1e 76.67%,
+    #601016 80%,
+    #5e150e 83.33%,
+    #5b1903 86.67%,
+    #571e00 90%,
+    #522200 93.33%,
+    #4e2600 96.67%,
+    #482900 100%
+  );
+  color: white;
+}
+
+.btn-confirmar:hover{
+    font-weight: bold;
+    color: white;
+}
+
+.btn-pay {
+  font-size: 20px;
+  width: 400px;
+  text-decoration: double;
+  background-color: #00b7fa;
+  color: #000000;
+}
+.btn-pay:hover {
+  transition: background-color 0.9s;
+  background-color: #09790c;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#collapsibleNavbar {
+  text-align: center;
+  color: white;
+}
+
+/* MEDIAQUERY LOGUEADO*/
+@media only screen and (max-width: 900px) {
+  #i-carrito {
+    color: rgb(1, 103, 247);
+    margin-right: 10px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+  }
+}

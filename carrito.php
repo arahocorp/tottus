@@ -9,9 +9,7 @@ if(isset($_POST['btnEliminar'])){
       unset($_SESSION['carrito'][$indice]);
       //echo "<script>alert('Elemento Borrado...');</script>";
     }
-
   }
-
 }
 
 if (isset($_POST['btnAccion'])){
@@ -20,7 +18,6 @@ if (isset($_POST['btnAccion'])){
     $precio= ($_POST['precio']);
     $cantidad= ($_POST['cantidad']);
     
-
   if(!isset($_SESSION['carrito'])){
   $producto=array(
       'id'=>$id,
@@ -28,7 +25,6 @@ if (isset($_POST['btnAccion'])){
       'cantidad'=>$cantidad,
       'precio'=>$precio,
   );
-
   $_SESSION['carrito'][0]=$producto;
 
   } else{
@@ -40,16 +36,7 @@ if (isset($_POST['btnAccion'])){
           'precio'=>$precio,
       );
       $_SESSION['carrito'][$NumeroProductos]=$producto;
-  }
-  
-      
-  
+  }  
 } 
 
-
-
-
 //$mensaje = print_r($_SESSION,true);
-  
-  
-?>
