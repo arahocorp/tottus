@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2022 a las 18:28:13
+-- Tiempo de generación: 20-11-2022 a las 06:40:36
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -39,14 +39,6 @@ CREATE TABLE `clientes` (
   `CLIENTE_CORREO` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `clientes`
---
-
-INSERT INTO `clientes` (`CLIENTE_ID`, `CLIENTE_NOMBRE`, `CLIENTE_DIRECCION_ID`, `CLIENTE_SALDO`, `CLIENTE_CREDITO`, `CLIENTE_EDAD`, `CLIENTE_SEXO`, `CLIENTE_TELEFONO`, `CLIENTE_CORREO`) VALUES
-(79, 'alan', 84, NULL, NULL, NULL, NULL, 987454654, 'contac@soriam.net'),
-(80, 'fdsaf', 85, NULL, NULL, NULL, NULL, 0, 'alan@gmai.com');
-
 -- --------------------------------------------------------
 
 --
@@ -70,21 +62,11 @@ CREATE TABLE `delivery` (
 CREATE TABLE `detalle_ventas` (
   `DETALLE_VENTA_ID` int(11) NOT NULL,
   `ID_VENTA` int(11) NOT NULL,
-  `COMIDA_ID` int(11) NOT NULL,
-  `COMIDA_NOMBRE` varchar(255) NOT NULL,
+  `ID` int(11) NOT NULL,
+  `NOMBRE` varchar(255) NOT NULL,
   `PRECIO` decimal(20,2) NOT NULL,
   `CANTIDAD` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `detalle_ventas`
---
-
-INSERT INTO `detalle_ventas` (`DETALLE_VENTA_ID`, `ID_VENTA`, `COMIDA_ID`, `COMIDA_NOMBRE`, `PRECIO`, `CANTIDAD`) VALUES
-(41, 72, 14, 'Chaufa de pollo ', '10.00', 1),
-(42, 72, 14, 'Chaufa de pollo ', '10.00', 1),
-(43, 73, 15, 'DELL', '1599.00', 1),
-(44, 73, 13, 'huawei', '2799.00', 1);
 
 -- --------------------------------------------------------
 
@@ -95,17 +77,9 @@ INSERT INTO `detalle_ventas` (`DETALLE_VENTA_ID`, `ID_VENTA`, `COMIDA_ID`, `COMI
 CREATE TABLE `direccion` (
   `DIRECCION_ID` int(11) NOT NULL,
   `DIRECCION_NUMERO_CALLE` varchar(255) DEFAULT NULL,
-  `DIRECCION_COMUNA` varchar(50) DEFAULT NULL,
+  `DIRECCION_DISTRITO` varchar(50) DEFAULT NULL,
   `DIRECCION_CIUDAD` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `direccion`
---
-
-INSERT INTO `direccion` (`DIRECCION_ID`, `DIRECCION_NUMERO_CALLE`, `DIRECCION_COMUNA`, `DIRECCION_CIUDAD`) VALUES
-(84, 'fdsfs', 'jfkdjskj', 'arequipa'),
-(85, 'fdsaf', 'fdsaf', 'fdasf');
 
 -- --------------------------------------------------------
 
@@ -117,20 +91,12 @@ CREATE TABLE `pedidos` (
   `PEDIDO_ID` int(11) NOT NULL,
   `NOMBRE` varchar(100) NOT NULL,
   `DIRECCION` varchar(255) NOT NULL,
-  `COMUNA` varchar(100) NOT NULL,
+  `DISTRITO` varchar(100) NOT NULL,
   `CALLE` varchar(200) NOT NULL,
   `VENTA_PEDIDO` int(11) NOT NULL,
   `TOTAL` decimal(20,2) NOT NULL,
   `FECHA` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `pedidos`
---
-
-INSERT INTO `pedidos` (`PEDIDO_ID`, `NOMBRE`, `DIRECCION`, `COMUNA`, `CALLE`, `VENTA_PEDIDO`, `TOTAL`, `FECHA`) VALUES
-(4, 'alan', 'arequipa', 'jfkdjskj', 'fdsfs', 72, '20.00', '2022-11-18 16:45:41'),
-(5, 'fdsaf', 'fdasf', 'fdsaf', 'fdsaf', 73, '4398.00', '2022-11-18 17:26:36');
 
 -- --------------------------------------------------------
 
@@ -154,12 +120,30 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`ID`, `DELIVERY`, `PROMOCION`, `NOMBRE`, `DESCRIPCION`, `PRECIO`, `IMAGEN`, `CATEGORIA`) VALUES
-(13, 'Arequipa', '10', 'huawei', 'Laptop Huawei Matebook D15 i5 15.6\" 8GB RAM 512GB SSD BohrD-WDH9D\r\nS/ 2,799.00', '2799.00', 'huawei.png', 'tecnologia'),
-(14, 'Arequipa', '10', 'Asus', 'Laptop ASUS 15 X515EA 15.6\'\' Ci5-1135G7 512SSD 8GB', '2199.00', 'asuslap.png', 'tecnologia'),
-(15, 'Arequipa', '10', 'DELL', 'Laptop Dell 15.6\" W - CE AMD Ryzen™ 5 3450U 8GB RAM 256GB', '1599.00', 'dell.png', 'tecnologia'),
-(16, 'Arequipa', '10', 'Lenovo', 'LLaptop Lenovo IdeaPad 5 15.6\" FHD AMD Ryzen 7 16GB RAM 512GB SSD', '3199.00', 'lenovo.png', 'tecnologia'),
-(17, 'Arequipa', '10', 'Acer', 'Laptop Acer Aspire 15.6\" Intel Core i5 1135G7 8GB RAM 512GB SSD Silver', '2199.00', 'acer.png', 'tecnologia'),
-(18, 'Arequipa', '10', 'HP', 'Laptop Huawei Matebook D15 i5 15.6\" 8GB RAM 512GB SSD BohrD-WDH9D', '2199.00', 'HP.png', 'tecnologia');
+(13, 'Arequipa', '10', 'huawei', 'Laptop Huawei Matebook D15 i5 15.6\" 8GB RAM 512GB SSD BohrD-WDH9D\r\nS/ 2,799.00', '2799.00', 'huawei.png', '1'),
+(14, 'Arequipa', '10', 'Asus', 'Laptop ASUS 15 X515EA 15.6\'\' Ci5-1135G7 512SSD 8GB', '2199.00', 'asuslap.png', '1'),
+(15, 'Arequipa', '10', 'DELL', 'Laptop Dell 15.6\" W - CE AMD Ryzen™ 5 3450U 8GB RAM 256GB', '1599.00', 'dell.png', '1'),
+(16, 'Arequipa', '10', 'Lenovo', 'LLaptop Lenovo IdeaPad 5 15.6\" FHD AMD Ryzen 7 16GB RAM 512GB SSD', '3199.00', 'lenovo.png', '1'),
+(17, 'Arequipa', '10', 'Acer', 'Laptop Acer Aspire 15.6\" Intel Core i5 1135G7 8GB RAM 512GB SSD Silver', '2199.00', 'acer.png', '1'),
+(18, 'Arequipa', '10', 'HP', 'Laptop Huawei Matebook D15 i5 15.6\" 8GB RAM 512GB SSD BohrD-WDH9D', '2199.00', 'HP.png', '1'),
+(19, '', '', 'Paneton buon natales', 'Contiene 800 gramos paneton clasico relleno de pasas y frutas confitadas alto en azucar alto en grasas saturadas', '20.60', 'buon_natale.png', '2'),
+(20, '', '', 'Paneton gloria', 'Contiene 900 gramos paneton clasico relleno de pasas y frutas confitadas\nalto en azucar\nalto en grasas saturadas', '21.90', 'gloria.png', '2'),
+(22, '', '', 'Paneton donofrio', 'Contiene 900 gramos paneton clasico relleno de pasas y frutas confitadas\n', '24.90', 'donofrio.png', '2'),
+(23, '', '', 'Paneton bimbo', 'Contiene 900 gramos paneton clasico relleno de pasas y frutas confitadas\n', '21.10', 'bimbo.png', '2'),
+(24, '', '', 'Paneton blanca', 'Contiene 900 gramos paneton clasico relleno de pasas y frutas confitadas\n', '21.60', 'blanca_flor.png', '2'),
+(25, '', '', 'Paneton todinno', 'Contiene 900 gramos paneton clasico relleno de pasas y frutas confitadas\n', '24.60', 'todinno.png', '2'),
+(26, '', '', 'Funko pop kratos', 'Producto coleccionable\r\nmaterial vinilo\r\nmodelo kratos', '317.90', 'kratos.png', '3'),
+(27, '', '', 'Funko pop draugr', 'Producto coleccionable\r\nmaterial vinilo\r\nmodelo draugr', '49.90', 'draugr.png', '3'),
+(28, '', '', 'Funko pop fire troll\r\n', 'Producto coleccionable\r\nmaterial vinilo\r\nmodelo fire troll', '69.90', 'troll.png', '3'),
+(29, '', '', 'Funko pop darth vader', 'Producto coleccionable\r\nmaterial vinilo\r\nmodelo darth vader', '65.90', 'troll.png', '3'),
+(30, '', '', 'Funko pop mandalorian', 'Producto coleccionable\r\nmaterial vinilo\r\nmodelo mandalorian', '81.90', 'mandalorian.png', '3'),
+(31, '', '', 'Funko pop grogu', 'Producto coleccionable\r\nmaterial vinilo\r\nmodelo grogu', '81.90', 'grogu.png', '3'),
+(32, '', '', 'Nike Essentials', 'Ppolera urbana\r\nfabricado con algodon y poliester\r\nbolsillo espacioso\r\nlook clasico', '169.90', 'polera_nike_essentials.png', '4'),
+(33, '', '', 'Nike sportswear', 'Polera urbana\r\nfabricado con algodon, poliester y sherpa\r\nbolsillos con cremalleras\r\npolera de la coleccion Nike_30', '107.90', 'polera_nike_sportswear.png', '4'),
+(34, '', '', 'North face Half Dome Tee ', 'Polo deportivo\r\nfabricado con algodon\r\nmanga corta\r\nlook casual', '129.90', 'polo_north face_half dome tee.png', '4'),
+(35, '', '', 'North face Half Dome', 'Polera urbana\r\nfabricado con poliester\r\nbolsillo espacioso\r\nlook clasico', '493.90', 'polera_north face_half dome.png', '4'),
+(36, '', '', 'Dc shoes kalis lite', 'Capellada de cuero\r\nsistema clasico de cordones\r\nlogo TPU en el costado\r\nEntresuela de goma eva liviana\r\nsuela de caucho', '499.90', 'zapatilla_dc_kalis lyte.png', '4'),
+(37, '', '', 'Dc shoes pure high', 'Parte superior de cuero, nobuck, gamuza y / o lona con cuarto de tela.\r\nForro de malla.\r\nCuello y lengua acolchados con espuma para mayor comodidad y soporte.\r\nConstrucción Cupsole.\r\nSuela DC con estampado Pill Pattern registrado.\r\nSuela de goma resistent', '399.90', 'zapatilla_dc_pure high.png', '4');
 
 -- --------------------------------------------------------
 
@@ -176,14 +160,6 @@ CREATE TABLE `ventas` (
   `CLIENTE_VENTA_ID` int(11) NOT NULL,
   `ESTADO` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `ventas`
---
-
-INSERT INTO `ventas` (`VENTA_ID`, `FECHA`, `CLAVE_TRANSACCION`, `PAY_PAL_DATOS`, `TOTAL`, `CLIENTE_VENTA_ID`, `ESTADO`) VALUES
-(72, '2022-11-18 16:45:41', '4nm8qj9fsbfaeikf8euqu7f05c', '', '20.00', 79, 'pendiente'),
-(73, '2022-11-18 17:26:35', 'og4f2kcc0q77c0pmtqh0bea6gi', '', '4398.00', 80, 'pendiente');
 
 --
 -- Índices para tablas volcadas
@@ -208,7 +184,7 @@ ALTER TABLE `delivery`
 ALTER TABLE `detalle_ventas`
   ADD PRIMARY KEY (`DETALLE_VENTA_ID`),
   ADD KEY `ID_VENTA` (`ID_VENTA`),
-  ADD KEY `COMIDA_ID` (`COMIDA_ID`);
+  ADD KEY `COMIDA_ID` (`ID`);
 
 --
 -- Indices de la tabla `direccion`
@@ -244,7 +220,7 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `CLIENTE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `CLIENTE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT de la tabla `delivery`
@@ -256,31 +232,31 @@ ALTER TABLE `delivery`
 -- AUTO_INCREMENT de la tabla `detalle_ventas`
 --
 ALTER TABLE `detalle_ventas`
-  MODIFY `DETALLE_VENTA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `DETALLE_VENTA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT de la tabla `direccion`
 --
 ALTER TABLE `direccion`
-  MODIFY `DIRECCION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `DIRECCION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `PEDIDO_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `PEDIDO_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `VENTA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `VENTA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- Restricciones para tablas volcadas
@@ -297,7 +273,7 @@ ALTER TABLE `clientes`
 --
 ALTER TABLE `detalle_ventas`
   ADD CONSTRAINT `detalle_ventas_ibfk_1` FOREIGN KEY (`ID_VENTA`) REFERENCES `ventas` (`VENTA_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `detalle_ventas_ibfk_2` FOREIGN KEY (`COMIDA_ID`) REFERENCES `productos` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `detalle_ventas_ibfk_2` FOREIGN KEY (`ID`) REFERENCES `productos` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pedidos`
