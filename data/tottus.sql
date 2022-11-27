@@ -184,7 +184,7 @@ ALTER TABLE `delivery`
 ALTER TABLE `detalle_ventas`
   ADD PRIMARY KEY (`DETALLE_VENTA_ID`),
   ADD KEY `ID_VENTA` (`ID_VENTA`),
-  ADD KEY `COMIDA_ID` (`ID`);
+  ADD KEY `ID` (`ID`);
 
 --
 -- Indices de la tabla `direccion`

@@ -1,6 +1,6 @@
 <?php
 
-include('global/config_pdo.php');
+include('config/config_pdo.php');
 include('carrito.php');
 include('templates/header.php');
 

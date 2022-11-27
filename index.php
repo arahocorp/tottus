@@ -1,5 +1,5 @@
 <?php
-include('global/config_pdo.php');
+include('config/config_pdo.php');
 include('carrito.php');
 include('templates/header.php');
 
@@ -44,7 +44,7 @@ if ($_mensaje != "") { ?>
 	foreach ($result as $key => $producto) { ?>
 		<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4  mb-4">
 			<div class="card p-4" id="card-img">
-				<img src="<?php echo 'img/' . $producto['IMAGEN']; ?>" class="card-img-top" alt="<?php echo $producto['NOMBRE']; ?>" data-bs-toggle="popover" data-trigger="hover" title="<?php echo $producto['DESCRIPCION']; ?>" data-bs-content="<?php echo $producto['DESCRIPCION']; ?>" height="290px">
+				<img src="<?php echo 'img/' . $producto['IMAGEN']; ?>" class="card-img-top" alt="<?php echo $producto['NOMBRE']; ?>" >
 				<div class="card-body">
 					<span><strong><?php echo $producto['NOMBRE']; ?></strong></span>
 					<h5 class="card-title">S/. <?php echo $producto['PRECIO']; ?></h5>
