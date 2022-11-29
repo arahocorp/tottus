@@ -48,7 +48,9 @@ if (!empty($_SESSION['carrito'])) {
     $reg_sql->bindParam(':DIRECCION_NUMERO_CALLE', $calle);
     $reg_sql->bindParam(':DIRECCION_DISTRITO', $distrito);
     $reg_sql->bindParam(':DIRECCION_CIUDAD', $ciudad);
-
+    /*------------------------------------------------------------------------- */
+    /*bind_param — Vincula una variable PHP a un parámetro de sentencia SQL     */
+    /*------------------------------------------------------------------------- */
     $reg_sql->execute();
 
     $last_id = $conn->lastInsertId(); //funcion insert_id 
@@ -112,33 +114,5 @@ if (!empty($_SESSION['carrito'])) {
 session_unset();
 $conn = null;
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php include('templates/footer.php'); ?>

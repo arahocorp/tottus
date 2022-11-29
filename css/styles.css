@@ -150,9 +150,9 @@ footer {
   color: white;
 }
 
-.btn-confirmar:hover{
-    font-weight: bold;
-    color: white;
+.btn-confirmar:hover {
+  font-weight: bold;
+  color: white;
 }
 
 .btn-pay {
@@ -172,6 +172,22 @@ footer {
 #collapsibleNavbar {
   text-align: center;
   color: white;
+}
+
+/**CDDIGO PARA ALINEAR A LA DERECHA O IZQUIERDA TODO EL CONTENIDO DENTRO DE ESTE DIV*/
+.flexible {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start !important;
+  align-items: center;
+  color: rgb(255, 0, 0);
+}
+
+
+/**cor del contenido de cada producto de index*/
+.ah img{
+  width: auto;
+  max-height: 340px !important;
 }
 
 /* MEDIAQUERY LOGUEADO*/

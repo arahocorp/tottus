@@ -21,8 +21,8 @@ if ($_mensaje != "") { ?>
 
 ?>
 
-<div class="col-12 text-center text-uppercase">
-	<h1>TODOS LOS PRODUCTOS</h1>
+<div class="col-12 text-uppercase flexible " >
+	<h1 >TODOS LOS PRODUCTOS</h1>
 </div>
 <hr>
 <br>
@@ -43,7 +43,7 @@ if ($_mensaje != "") { ?>
 	<?php
 	foreach ($result as $key => $producto) { ?>
 		<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4  mb-4">
-			<div class="card p-4" id="card-img">
+			<div class="ah card p-4" id="card-img">
 				<img src="<?php echo 'img/' . $producto['IMAGEN']; ?>" class="card-img-top" alt="<?php echo $producto['NOMBRE']; ?>" >
 				<div class="card-body">
 					<span><strong><?php echo $producto['NOMBRE']; ?></strong></span>

@@ -57,7 +57,7 @@ if ($_mensaje != "") { ?>
 						<input type="hidden" name="cantidad" id="cantidad" value="<?php echo 1; ?>">
 
 
-						<button type="submit" class="btn btn-a-anadir" value="Agregar" name="btnAccion">Agregar al pedido</button>
+						<button type="submit" class="btn btn-a-anadir" name="btnAccion">Agregar al pedido</button>
 					</form>
 
 				</div>

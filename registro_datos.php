@@ -46,19 +46,14 @@ include('templates/header.php');
       <button type="submit" class="btn btn-success " name="register">Registrar Datos</button>
     </div>
   </form>
-
   <div class="alert alert-success text-center mt-5">
     Al registrarse acepta nuestras politicas de uso y privacidad.
   </div>
 </div>
 
-
-
-
 <?php include('templates/footer.php'); ?>
 
 <!-- Button trigger modal -->
-
 
 <main class="container">
   <!-- The Modal -->
