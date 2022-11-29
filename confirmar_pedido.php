@@ -39,7 +39,7 @@ $_mensaje = "";
                     </tr>
                 </thead>
                 <tbody>
-                    <div class="container_card">
+                    <tr>
                         <?php
                         foreach ($result as $key => $pedido) { ?>
                             <td><?php echo ($pedido['NOMBRE']); ?></td>
@@ -50,7 +50,7 @@ $_mensaje = "";
                         <?php
                         }
                         ?>
-                    </div>
+                    </tr>
                 </tbody>
             </table>
         </div>
