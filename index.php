@@ -13,7 +13,6 @@ if ($_mensaje != "") { ?>
 	<div class="alert alert-success">
 		<?php echo $mensaje; ?>
 		<a href="MostrarCarrito.php" class="badge text-bg-success">Ver carrito</a>
-
 	</div>
 
 <?php
