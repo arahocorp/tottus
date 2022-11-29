@@ -159,7 +159,7 @@ INSERT INTO `productos` (`ID`, `NOMBRE`, `DESCRIPCION`, `PRECIO`, `IMAGEN`, `CAT
 (15, 'DELL', 'Laptop Dell 15.6 W - CE AMD Ryzen™ 5 3450U 8GB RAM 256GB', '1599.00', 'dell.png', '1'),
 (16, 'Lenovo', 'LLaptop Lenovo IdeaPad 5 15.6 FHD AMD Ryzen 7 16GB RAM 512GB SSD', '3199.00', 'lenovo.png', '1'),
 (17, 'Acer', 'Laptop Acer Aspire 15.6 Intel Core i5 1135G7 8GB RAM 512GB SSD Silver', '2199.00', 'acer.png', '1'),
-(18, 'HP', 'Laptop Huawei Matebook D15 i5 15.6 8GB RAM 512GB SSD BohrD-WDH9D', '2199.00', 'HP.png', '1'),
+(18, 'Victus', 'LAPTOP HP VICTUS 16-D0521LA INTEL CORE I5 8GB RAM 512GB SSD 16.1''', '3199.00', 'hp.png', '1'),
 (19, 'Paneton buon natales', 'Contiene 800 gramos paneton clasico relleno de pasas y frutas confitadas alto en azucar alto en grasas saturadas', '20.60', 'buon_natale.png', '2'),
 (20, 'Paneton gloria', 'Contiene 900 gramos paneton clasico relleno de pasas y frutas confitadas alto en azucar alto en grasas saturadas', '21.90', 'gloria.png', '2'),
 (22, 'Paneton donofrio', 'Contiene 900 gramos paneton clasico relleno de pasas y frutas confitadas ', '24.90', 'donofrio.png', '2'),
