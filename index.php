@@ -20,7 +20,7 @@ if ($_mensaje != "") { ?>
 
 ?>
 
-<div class="col-12 text-uppercase flexible " >
+<div class="col-12 text-uppercase  d-flex justify-content-end " >
 	<h1 >TODOS LOS PRODUCTOS</h1>
 </div>
 <hr>

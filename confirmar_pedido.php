@@ -5,16 +5,21 @@ include('templates/header.php');
 $_mensaje = "";
 ?>
 <div class="container mt-4  text-end mb-4 mb-lg-1">
-    <button type="button" class="btn bg-info" name="printPDF">
+    <a id="btnCrearPdf" type="button" class="btn bg-info" name="printPDF" onclick="imprimirRecibo();">
         Descargar PDF
-    </button>
+    </a>
+    <script>
+        function imprimirRecibo() {
+            window.print();
+        }
+    </script>
 </div>
 <div class="center mt-5">
     <div class="card pt-3 ">
-        <div class="d-flex justify-content-center m-5">
+        <div class="d-flex justify-content-end m-5">
             <img src="tottus.svg" alt="">
         </div>
-        <div class="col-12 text-uppercase flexible  " style="font-size: 25px;">
+        <div class="col-12 text-uppercase d-flex justify-content-center  " style="font-size: 25px;">
             <p>Recibo Electronico</p>
         </div>
         <div class="container-fluid p-2">
