@@ -13,7 +13,7 @@ include('templates/header.php');
   </button>
 </div>
 
-<div class="container col-12 col-sm-10 col-md-8 col-lg-6 bg-gradient p-1 p-lg-5">
+<div class="container col-12 col-sm-10 col-md-8 col-lg-6  bg-gradient p-1 p-lg-5">
   <form action="pagar.php" method="post">
     <h1 align="center">REGISTRE SUS DATOS</h1>
     <h2>Datos del Cliente</h2>
