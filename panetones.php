@@ -13,9 +13,7 @@ if ($_mensaje != "") { ?>
 	<div class="alert alert-success">
 		<?php echo $mensaje; ?>
 		<a href="MostrarCarrito.php" class="badge text-bg-success">Ver carrito</a>
-
 	</div>
-
 <?php
 }
 
@@ -49,14 +47,11 @@ if ($_mensaje != "") { ?>
 					<span><strong><?php echo $producto['NOMBRE']; ?></strong></span>
 					<h5 class="card-title">S/. <?php echo $producto['PRECIO']; ?></h5>
 					<p class="card-text"> <?php echo $producto['DESCRIPCION']; ?></p>
-
 					<form action="" method="post">
 						<input type="hidden" name="id" id="id" value="<?php echo ($producto['ID']); ?>">
 						<input type="hidden" name="nombre" id="nombre" value="<?php echo ($producto['NOMBRE']); ?>">
 						<input type="hidden" name="precio" id="precio" value="<?php echo ($producto['PRECIO']); ?>">
 						<input type="hidden" name="cantidad" id="cantidad" value="<?php echo 1; ?>">
-
-
 						<button type="submit" class="btn btn-a-anadir" value="Agregar" name="btnAccion">Agregar al pedido</button>
 					</form>
 
